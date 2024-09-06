@@ -70,14 +70,8 @@ This API allows users to manage a collection of books. It supports CRUD operatio
 
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
-3. Create a `.env` file in the root directory with the following content:
-    ```bash
-    MONGO_URI=your_mongo_connection_string
-    JWT_SECRET=your_jwt_secret
-    PORT=5000
-    ```
-4. Run `npm start` to start the server.
-5. Test the API using Postman or any other API client.
+3. Run `node app.js` to start the server.
+4. Test the API using Postman or any other API client.
 
 ## Note
 
