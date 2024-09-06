@@ -1,51 +1,85 @@
-"# Book_Store" 
+# Bookstore API
 
-Run this Path:-
-http://localhost:5000/api/books
+This API allows users to manage a collection of books. It supports CRUD operations, user authentication, searching, filtering, and pagination.
 
-All Api check in Postman
+## API Endpoints
 
-Books
-		##Get:- http://localhost:5000/api/books
-		##Post:- http://localhost:5000/api/books
-		{
-			"title": "Book added",
-			"author": "Author added",
-			"genre": "Fiction added"
-		}
-		PUT:- http://localhost:5000/api/books/66d9d74d7fee9e5aa535015e
-		{
-			"title": "Updated Book Title",
-			"author": "New Author"
-		}
-		Delete:- http://localhost:5000/api/books/66d9d74d7fee9e5aa535015e
-		
-		Search by Title:
-		GET http://localhost:5000/api/books?title=Book One
+### Books
 
-		Filter by Author:
-		GET http://localhost:5000/api/books?author=Author three
+- **Get all books:**
+  - **GET**: `http://localhost:5000/api/books`
 
-		Paginate Results:
-		http://localhost:5000/api/books?page=1&limit=3
+- **Create a new book:**
+  - **POST**: `http://localhost:5000/api/books`
+  - **Request Body**:
+    ```json
+    {
+      "title": "Book added",
+      "author": "Author added",
+      "genre": "Fiction added"
+    }
+    ```
 
+- **Update a book:**
+  - **PUT**: `http://localhost:5000/api/books/<book_id>`
+  - **Request Body**:
+    ```json
+    {
+      "title": "Updated Book Title",
+      "author": "New Author"
+    }
+    ```
 
+- **Delete a book:**
+  - **DELETE**: `http://localhost:5000/api/books/<book_id>`
 
+- **Search by title:**
+  - **GET**: `http://localhost:5000/api/books?title=Book One`
 
-Users
-		Post:- http://localhost:5000/api/users/register
-		{
-			"username": "testuser New",
-			"password": "testpassword New"
-		}
+- **Filter by author:**
+  - **GET**: `http://localhost:5000/api/books?author=Author three`
 
-		Get:- http://localhost:5000/api/users/login
-		{
-			"username": "testuser New",
-			"password": "testpassword New"
-		}
+- **Paginate results:**
+  - **GET**: `http://localhost:5000/api/books?page=1&limit=3`
 
-		It will create a token.
+### Users
 
+- **Register a new user:**
+  - **POST**: `http://localhost:5000/api/users/register`
+  - **Request Body**:
+    ```json
+    {
+      "username": "testuser New",
+      "password": "testpassword New"
+    }
+    ```
 
-"# Book_Store-NodeJS_CRUD-" 
+- **User login:**
+  - **POST**: `http://localhost:5000/api/users/login`
+  - **Request Body**:
+    ```json
+    {
+      "username": "testuser New",
+      "password": "testpassword New"
+    }
+    ```
+
+  This will return a JWT token.
+
+## Running the Project
+
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Create a `.env` file in the root directory with the following content:
+    ```bash
+    MONGO_URI=your_mongo_connection_string
+    JWT_SECRET=your_jwt_secret
+    PORT=5000
+    ```
+4. Run `npm start` to start the server.
+5. Test the API using Postman or any other API client.
+
+## Note
+
+- Replace `<book_id>` with the actual ID of the book in the update and delete routes.
+- Ensure MongoDB is running and you have a valid connection string in `.env`.
