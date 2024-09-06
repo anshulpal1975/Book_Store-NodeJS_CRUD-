@@ -6,8 +6,8 @@ http://localhost:5000/api/books
 All Api check in Postman
 
 Books
-		Get:- http://localhost:5000/api/books
-		Post:- http://localhost:5000/api/books
+		##Get:- http://localhost:5000/api/books
+		##Post:- http://localhost:5000/api/books
 		{
 			"title": "Book added",
 			"author": "Author added",
@@ -28,6 +28,9 @@ Books
 
 		Paginate Results:
 		http://localhost:5000/api/books?page=1&limit=3
+
+
+
 
 Users
 		Post:- http://localhost:5000/api/users/register
